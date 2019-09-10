@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Button, Image, StyleSheet} from 'react-native';
-import {Block, Text, Input} from '../components';
+import {Image, StyleSheet} from 'react-native';
+import {Block, Text, Input, Button} from '../components';
 
 export default class Analytics extends Component {
   render() {
@@ -39,9 +39,17 @@ export default class Analytics extends Component {
               label="email address"
             />
             <Input full style={{marginBottom: 26}} password label="Password" />
-            <Button title="sign in" />
-            <Text color="#8798AD" size={15}>
-              Don't have an account? Sign up.
+            <Button style={{marginBottom: 13}} full color="#2e58ff">
+              <Text weight="bold" center size={15} spacing={0} color="#fff">
+                Sign in
+              </Text>
+            </Button>
+            <Text height={22} color="#8798AD" size={15}>
+              Don't have an account?{' '}
+              <Text height={18} color="#2e58ff">
+                Sign up
+              </Text>
+              .
             </Text>
           </Block>
         </Block>
