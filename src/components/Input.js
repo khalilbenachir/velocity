@@ -28,15 +28,28 @@ export default class Input extends Component {
       : 'default';
     return (
       <View>
-        <Text
-          spacing={1.12}
-          size={12}
-          color="#b0bac9"
-          height={14}
-          weight={'500'}
-          style={styles.label}>
-          {label}
-        </Text>
+        <View style={styles.password}>
+          <Text
+            spacing={1.12}
+            size={12}
+            color="#b0bac9"
+            height={14}
+            weight={'500'}
+            style={styles.label}>
+            {label}
+          </Text>
+          {password && (
+            <Text
+              spacing={1.12}
+              size={12}
+              color="#b0bac9"
+              height={14}
+              weight={'500'}
+              style={styles.label}>
+              Show password
+            </Text>
+          )}
+        </View>
         <TextInput
           keyboardType={inputType}
           autoCapitalize="none"
@@ -67,5 +80,10 @@ const styles = StyleSheet.create({
   },
   full: {
     width: width - 50,
+  },
+  password: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 });
