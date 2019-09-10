@@ -9,6 +9,7 @@ export default class Block extends Component {
       flex && {flex},
       middle && styles.middle,
       center && styles.center,
+      style,
     ];
     return (
       <View style={blockStyles} {...props}>
