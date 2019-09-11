@@ -7,5 +7,6 @@ import Auth from './Auth';
 export default createAppContainer(
   createSwitchNavigator({
     Auth,
+    Screens,
   }),
 );

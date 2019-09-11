@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {TextInput, View, StyleSheet, Dimensions} from 'react-native';
+import {colors, fonts, sizes} from '../constants/theme';
 
 const {width} = Dimensions.get('window');
 
@@ -12,6 +13,7 @@ export default class Input extends Component {
       full,
       phone,
       email,
+      forgotPassword,
       number,
       password,
       label,
@@ -28,25 +30,26 @@ export default class Input extends Component {
       : 'default';
     return (
       <View>
-        <View style={styles.password}>
+        <View style={[styles.labelContainer]}>
           <Text
             spacing={1.12}
             size={12}
             color="#b0bac9"
             height={14}
             weight={'500'}
-            style={styles.label}>
+            style={[styles.label, fonts.captionMedium]}>
             {label}
           </Text>
-          {password && (
+          {forgotPassword && (
             <Text
               spacing={1.12}
               size={12}
               color="#b0bac9"
               height={14}
+              onPress={() => this.props.navigation.navigate('Forgot')}
               weight={'500'}
-              style={styles.label}>
-              Show password
+              style={[styles.rightLabel, fonts.caption]}>
+              Forgot password?
             </Text>
           )}
         </View>
@@ -70,7 +73,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     color: '#2e3840',
     fontSize: 15,
-    height: 40,
+    height: 45,
     paddingVertical: 11,
     paddingHorizontal: 16,
   },
@@ -78,12 +81,16 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     marginBottom: 8,
   },
+  rightLabel: {
+    marginBottom: 8,
+  },
   full: {
     width: width - 50,
   },
-  password: {
+  labelContainer: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginBottom: 8,
   },
 });

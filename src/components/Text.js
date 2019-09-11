@@ -34,6 +34,7 @@ export default class Typography extends Component {
 const styles = StyleSheet.create({
   text: {
     fontSize: 14,
+    fontFamily: 'Rubik-Regular',
   },
 
   center: {
