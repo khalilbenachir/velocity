@@ -19,7 +19,7 @@ export default class Register extends Component {
         <KeyboardAvoidingView
           style={styles.container}
           behavior="height"
-          keyboardVerticalOffset={height * 0.3199}
+          keyboardVerticalOffset={height * 0.04}
           contentContainerStyle={styles.container}
           enabled>
           <Block center middle>
@@ -42,23 +42,23 @@ export default class Register extends Component {
             <Text style={fonts.caption}>
               Free forever.No credit card needed.
             </Text>
-            <Block style={{marginTop: 16}} row center>
+            <Block middle space style={{marginTop: 16}} row center>
               <Card
                 energy
                 shadow={true}
-                border={false}
+                cadre
                 soustitle="full access to all settings."
                 title="Administrator"
               />
 
               <Card
                 shadow={true}
-                border={true}
+                border
                 title=" Operator"
                 soustitle="service desck and chat permissions."
               />
             </Block>
-            <Block center style={{marginTop: 40}}>
+            <Block flex={2} center style={{marginTop: 40}}>
               <Input
                 full
                 style={[{marginBottom: 20}, fonts.paragraph]}

@@ -17,7 +17,7 @@ export default class Block extends Component {
     const blockStyles = [
       styles.block,
       flex && {flex},
-      space && {justifyContent: 'space-' + space},
+      space && {justifyContent: 'space-between'},
       row && styles.row,
       column && styles.column,
       middle && styles.middle,

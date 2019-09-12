@@ -16,6 +16,7 @@ export default class Card extends Component {
       soustitle,
       border,
       style,
+      cadre,
       energy,
       children,
       ...props
@@ -23,14 +24,18 @@ export default class Card extends Component {
     const cardStyles = [
       styles.card,
       shadow && styles.shadow,
-      border && styles.border,
+      border ? styles.border : styles.cadre,
       style,
     ];
 
-    const icon = energy;
     return (
       <Block style={cardStyles} {...props}>
-        <Block center style={styles.header}>
+        <Block center middle style={styles.header}>
+          {cadre && (
+            <Block center middle style={[styles.badge, {padding: 2}]}>
+              <Icon check />
+            </Block>
+          )}
           <TouchableOpacity style={styles.iconWrapper}>
             {energy ? <Icon energy /> : <Icon message />}
           </TouchableOpacity>
@@ -56,16 +61,31 @@ Card.propTypes = {
 const styles = StyleSheet.create({
   card: {
     flex: 1,
-    padding: 25,
     backgroundColor: colors.white,
-    overflow: 'hidden',
+    position: 'relative',
+    marginHorizontal: 15,
   },
   header: {
-    paddingBottom: 10,
+    paddingBottom: 1,
   },
   border: {
     borderColor: colors.card,
     borderWidth: 1,
+    borderRadius: 4,
+  },
+  cadre: {
+    borderColor: colors.lightblue,
+    borderWidth: 1,
+    borderRadius: 4,
+  },
+  badge: {
+    position: 'absolute',
+    top: -12,
+    right: -12,
+    backgroundColor: colors.blue,
+    height: 25,
+    width: 25,
+    borderRadius: 25,
   },
   shadow: {
     shadowColor: colors.shadow,
@@ -81,5 +101,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 10,
   },
 });

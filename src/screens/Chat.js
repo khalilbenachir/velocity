@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 
-export default class Analytics extends Component {
+import {Block, Text, Input, Button} from '../components';
+
+export default class Chat extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text> chat </Text>
-      </View>
+      <Block center middle>
+        <Text> Chat </Text>
+      </Block>
     );
   }
 }

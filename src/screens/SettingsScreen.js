@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 
-export default class Analytics extends Component {
+import {Block, Text, Input, Button} from '../components';
+
+export default class SettingsSreen extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text> Settings screen </Text>
-      </View>
+      <Block middle center style={styles.container}>
+        <Text> SettingsSreen </Text>
+      </Block>
     );
   }
 }

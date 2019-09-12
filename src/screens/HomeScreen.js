@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 
-export default class Analytics extends Component {
+import {Block, Text, Input, Button} from '../components';
+
+export default class HomeScreen extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <Block middle center style={styles.container}>
         <Text> HomeScreen </Text>
-      </View>
+      </Block>
     );
   }
 }

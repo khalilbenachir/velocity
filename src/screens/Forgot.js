@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 
 import {Block, Text, Input, Button} from '../components';
 
-export default class Analytics extends Component {
+export default class Frogot extends Component {
   render() {
     return (
       <Block middle center style={styles.container}>

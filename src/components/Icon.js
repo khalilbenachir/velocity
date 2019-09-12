@@ -12,7 +12,13 @@ const menuIcon = (
 const notificationIcon = (
   <Image
     source={require('../../assets/images/icons/notifications.png')}
-    style={{height: 22, width: 21}}
+    style={{height: 20, width: 19}}
+  />
+);
+const checkIcon = (
+  <Image
+    source={require('../../assets/images/icons/check.png')}
+    style={{height: 20, width: 19}}
   />
 );
 const messageIcon = (
@@ -60,6 +66,7 @@ export default class Icon extends PureComponent {
       energy,
       options,
       children,
+      check,
       message,
     } = this.props;
 
@@ -70,6 +77,7 @@ export default class Icon extends PureComponent {
     if (options) return optionsIcon;
     if (energy) return energyIcon;
     if (message) return messageIcon;
+    if (check) return checkIcon;
 
     return children || null;
   }
